@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Searchbar from '../components/Searchbar'
 import { useDispatch, useSelector } from 'react-redux'
 import Tabs from '../components/Tabs'
@@ -67,7 +67,6 @@ const UserDashboard = () => {
       <div className="max-w-7xl mx-auto px-6 py-3">
         <div className="flex items-center justify-between gap-6">
 
-          {/* LOGO */}
           <div
             onClick={() => {
                 navigate("/user-dashboard")
@@ -77,7 +76,7 @@ const UserDashboard = () => {
             }
             className="cursor-pointer flex items-center gap-2.5 group shrink-0"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#e60023] to-[#ff4458] flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+            <div className="w-10 h-10 rounded-full bg-linear-to-br from-[#e60023] to-[#ff4458] flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
               P
             </div>
             <h1 className="text-[#e60023] font-extrabold text-xl tracking-tight group-hover:scale-105 transition-transform hidden sm:block">
@@ -85,30 +84,17 @@ const UserDashboard = () => {
             </h1>
           </div>
 
-          {/* SEARCH - Desktop */}
+       
           <div className="flex-1 max-w-2xl hidden md:block">
             <Searchbar />
           </div>
 
-          {/* ACTIONS */}
+      
           <div className="flex items-center gap-2 shrink-0">
 
-            {/* Collections Button */}
-            {/* <button
-              onClick={() => navigate("/collection")}
-              className="hidden sm:flex items-center gap-2 bg-[#e60023] hover:bg-[#d01f1f] text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-95"
-            >
-              <span className="text-base">📁</span>
-              <span>Collections</span>
-            </button> */}
+           
 
-            {/* Mobile Collections Icon */}
-            <button
-              onClick={() => navigate("/collection")}
-              className="sm:hidden w-10 h-10 rounded-full bg-[#e60023] text-white flex items-center justify-center shadow-md hover:shadow-lg hover:scale-105 transition-all"
-            >
-              📁
-            </button>
+           
 
             {/* Profile Dropdown */}
             <div className="relative">
@@ -117,11 +103,11 @@ const UserDashboard = () => {
                 className="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-full border-2 border-red-100 hover:border-[#e60023] hover:bg-red-50 transition-all group"
               >
                 {/* Avatar */}
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#e60023] to-[#ff4458] flex items-center justify-center text-white font-bold text-sm shadow-sm">
+                <div className="w-8 h-8 rounded-full bg-linear-to-br from-[#e60023] to-[#ff4458] flex items-center justify-center text-white font-bold text-sm shadow-sm">
                   {user?.name?.charAt(0).toUpperCase() || "U"}
                 </div>
                 {/* Name */}
-                <span className="hidden md:block text-sm font-semibold text-[#333] group-hover:text-[#e60023] transition-colors max-w-[100px] truncate">
+                <span className="hidden md:block text-sm font-semibold text-[#333] group-hover:text-[#e60023] transition-colors max-w-25 truncate">
                   {user?.name?.split(" ")[0] || "User"}
                 </span>
                 {/* Arrow */}
@@ -143,9 +129,9 @@ const UserDashboard = () => {
                   <div className="absolute right-0 top-14 w-64 bg-white rounded-2xl shadow-2xl border-2 border-red-100 z-20 overflow-hidden animate-fadeIn">
 
                     {/* User Info Header */}
-                    <div className="px-5 py-4 bg-gradient-to-br from-red-50 to-white border-b border-red-100">
+                    <div className="px-5 py-4 bg-linear-to-br from-red-50 to-white border-b border-red-100">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#e60023] to-[#ff4458] flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        <div className="w-12 h-12 rounded-full bg-linear-to-br from-[#e60023] to-[#ff4458] flex items-center justify-center text-white font-bold text-xl shadow-lg">
                           {user?.name?.charAt(0).toUpperCase() || "U"}
                         </div>
                         <div className="min-w-0">
